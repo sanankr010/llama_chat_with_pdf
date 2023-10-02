@@ -1,4 +1,4 @@
-FROM python:3.7
+FROM python:3.10
 
 RUN pip install virtualenv
 ENV VIRTUAL_ENV=/venv
@@ -18,7 +18,7 @@ COPY . /app
 ENV PORT 8501
 
 # cmd to launch app when container is run
-CMD streamlit run app.py
+CMD streamlit run Streamlit_appv1.1.py
 
 # streamlit-specific commands for config
 ENV LC_ALL=C.UTF-8
