@@ -89,10 +89,10 @@ pdf_mapping = {
 st.markdown(custom_css, unsafe_allow_html=True)
 # Load environment variables
 load_dotenv()
-folder_path=r"C:\Users\siddharth.jha\Generative_AI\demo_turfview_chatbot\pdfs"
-nihilent_logo_img = Image.open(r"C:\Users\siddharth.jha\Generative_AI\demo_turfview_chatbot\nihilent_logo.jpg")
-castrol_logo_img = Image.open(r"C:\Users\siddharth.jha\Generative_AI\demo_turfview_chatbot\castrol_logo.png")
-Turfviw_BI_logo = Image.open(r"C:\Users\siddharth.jha\Generative_AI\demo_turfview_chatbot\BP_logo.png")
+folder_path="pdfs"
+nihilent_logo_img = Image.open("nihilent_logo.jpg")
+castrol_logo_img = Image.open("castrol_logo.png")
+Turfviw_BI_logo = Image.open("BP_logo.png")
 # Main Streamlit app
 def main():
     st.markdown(custom_css, unsafe_allow_html=True)
@@ -139,7 +139,7 @@ def main():
 
         # load Vector from vectorstore
     embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
-    load_vectorstore = FAISS.load_local(r"C:\Users\siddharth.jha\Generative_AI\demo_turfview_chatbot\vector_store\TVBI - TurfView Master Guide V7_en.pdf", embeddings)
+    load_vectorstore = FAISS.load_local("vector_store", embeddings)
     
 
     st.session_state.processed_data = {
